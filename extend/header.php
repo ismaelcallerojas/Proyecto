@@ -37,4 +37,12 @@ if (!isset($_SESSION['nick'])) {
 </head>
 <body class= "grey lighten-3">
     <main>
+    <?php 
     
+    if ($_SESSION['nivel']=='ADMINISTRADOR') {
+      include 'menu_admin.php';
+    }else {
+      include 'menu_asesor.php';
+    }
+    
+    ?>
