@@ -35,12 +35,12 @@ if (isset($_SESSION['nick'])) {
                                 <div class="input-field">
                                     <i class="material-icons prefix">perm_identity</i>
                                     <input type="text" name="usuario" id="usuario" autofocus pattern="[A-Z]{4,15}" id="nick" onblur="may(this.value, this.id)">
-                                    <label for="usuario">Usuario</label>
+                                    <label for="usuario">Usuario:</label>
                                 </div>
                                 <div class="input-field">
                                     <i class="material-icons prefix">vpn_key</i>
                                     <input type="password" name="contra" id="contra">
-                                    <label for="contra">Contraseña</label>
+                                    <label for="contra">Contraseña:</label>
                                 </div>
                                 <div class="input-field center">
                                     <button type="submit" class="btn waves-effect waves-light">Acceder</button>
