@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2021 a las 12:33:06
+-- Tiempo de generación: 27-10-2021 a las 17:53:08
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.25
 
@@ -141,12 +141,12 @@ CREATE TABLE `inventario` (
 --
 
 INSERT INTO `inventario` (`propiedad`, `consecutivo`, `id_cliente`, `departamento`, `provincia`, `nombre_cliente`, `precio`, `fraccionamiento`, `calle_num`, `numero_int`, `m2t`, `banos`, `plantas`, `caracteristicas`, `m2c`, `recamaras`, `cocheras`, `observaciones`, `forma_pago`, `asesor`, `tipo_inmueble`, `fecha_registro`, `comentario_web`, `operacion`, `foto_principal`, `mapa`, `latitud`, `longitud`, `marcado`, `estatus`) VALUES
-('0a9bda549062b9a62e40322e470fffee2cecf933', 538, 1, 'COCHABAMBA', 'BOLIVAR', 'JUAN PEREZ', 20, 'JJJ', 'BBBB', 12, 1, 1, 1, 'JBLV', 67, 2, 1, 'DFCGHBJK', 'JKB', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-12', 'FXJFX', 'TRASPASO', 'casas/principal-8570a9bda549062b9a62e40322e470fffee2cecf933.jpg', 'BBBB JJJ COCHABAMBA, BOLIVAR', '-17.660921', '-62.718803', '', 'ACTIVO'),
+('0a9bda549062b9a62e40322e470fffee2cecf933', 538, 1, 'COCHABAMBA', 'BOLIVAR', 'JUAN PEREZ', 20, 'JJJ', 'BBBB', 12, 1, 1, 1, 'JBLV', 67, 2, 1, 'DFCGHBJK', 'JKB', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-12', 'FXJFX', 'TRASPASO', 'casas/principal-8570a9bda549062b9a62e40322e470fffee2cecf933.jpg', 'BBBB JJJ COCHABAMBA, BOLIVAR', '-17.660921', '-62.718803', 'SI', 'ACTIVO'),
 ('582fa063a2b16d8487f1749e6c5330c63b379d27', 536, 4, 'COCHABAMBA', 'CHAPARE', 'PEDRO PEREZ MURILLO', 100000, 'ENTRE RIOS', '234', 324, 342, 1, 4, 'QUIMICO', 23, 2, 3, 'MUCHA CALOR', 'WERQ', 'ASESOR', 'LOCAL', '2021-10-20', 'NO RECOMENDABLE PARA CLIENTES DEL OCCIDENTE', 'VENTA', 'casas/principal-417582fa063a2b16d8487f1749e6c5330c63b379d27.jpg', '234 ENTRE RIOS COCHABAMBA, CHAPARE', '-17.395716', '-66.300677', '', 'ACTIVO'),
-('589daf38b7139cbb90fb98f1e1c7664defc43910', 540, 5, 'COCHABAMBA', 'CERCADO', 'ROSA', 80000, 'PJE. BOLIVAR', 'PJE. BOLIVAR', 192, 500, 2, 1, 'PLAZA', 600, 10, 2, 'AREA VERDE', 'EFECTIVO', 'ISMAEL FERNANDO CALLE ROJAS', 'LOCAL', '2021-10-01', 'RECOMENDABLE', 'RENTA', 'casas/principal-161589daf38b7139cbb90fb98f1e1c7664defc43910.jpg', 'PJE. BOLIVAR PJE. BOLIVAR COCHABAMBA, CERCADO', '-17.395716', '-66.300677', '', 'ACTIVO'),
-('726f361d3c41359f057aa2ff58741314d6479b59', 542, 1, 'CHUQUISACA', 'AZURDUY', 'JUAN PEREZ', 250000, 'VINTO', 'LJNVDSVNE&Ntilde;OV', 192, 1234, 2, 2, 'SDFGHJKJHGFDFGVBNHM', 123, 3, 2, 'GFGVHJGFCVBN', 'EFECTIVO', 'ASESOR', 'CASA', '2021-10-20', 'RTHTHTRHRTHTRHTRERHTR', 'VENTA', 'casas/foto_principal.png', 'LJNVDSVNE&Ntilde;OV VINTO CHUQUISACA, AZURDUY', '-17.654123', '-16.123465', '', 'ACTIVO'),
+('589daf38b7139cbb90fb98f1e1c7664defc43910', 540, 5, 'COCHABAMBA', 'CERCADO', 'ROSA', 80000, 'PJE. BOLIVAR', 'PJE. BOLIVAR', 192, 500, 2, 1, 'PLAZA', 600, 10, 2, 'AREA VERDE', 'EFECTIVO', 'ISMAEL FERNANDO CALLE ROJAS', 'LOCAL', '2021-10-01', 'RECOMENDABLE', 'RENTA', 'casas/principal-161589daf38b7139cbb90fb98f1e1c7664defc43910.jpg', 'PJE. BOLIVAR PJE. BOLIVAR COCHABAMBA, CERCADO', '-17.395716', '-66.300677', 'SI', 'ACTIVO'),
+('726f361d3c41359f057aa2ff58741314d6479b59', 542, 1, 'CHUQUISACA', 'AZURDUY', 'JUAN PEREZ', 250000, 'VINTO', 'LJNVDSVNE&Ntilde;OV', 192, 1234, 2, 2, 'SDFGHJKJHGFDFGVBNHM', 123, 3, 2, 'GFGVHJGFCVBN', 'EFECTIVO', 'ASESOR', 'CASA', '2021-10-20', 'RTHTHTRHRTHTRHTRERHTR', 'VENTA', 'casas/foto_principal.png', 'LJNVDSVNE&Ntilde;OV VINTO CHUQUISACA, AZURDUY', '-17.654123', '-16.123465', 'SI', 'ACTIVO'),
 ('8f1bea52f3ed56e2e5d0518362d6dc05f2c6bd37', 537, 1, 'LA PAZ', 'ABEL ITURRALDE', 'JUAN PEREZ', 20, 'JJJ', 'BBBB', 12, 1, 1, 1, 'JBLV', 67, 2, 1, 'DFCGHBJK', 'JKB', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-14', 'FXJFX', 'TRASPASO', 'casas/foto_principal.png', 'BBBB JJJ LA PAZ, ABEL ITURRALDE', '-17.395716', '-66.300677', '', 'ACTIVO'),
-('d03d4e9a84f28291ab91df15c66a09bc6ca1e64c', 541, 1, 'BENI', 'GRAL. J. BALLIVIAN', 'JUAN PEREZ', 20, 'JH K', 'MGJVK', 45, 123, 1, 2, 'DFGHJKL&Ntilde;', 120, 2, 1, 'SDFGHJKL&Ntilde;', 'SDFGHJKLMN', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-06', 'YHVJBJNB', 'RENTA', 'casas/foto_principal.png', 'MGJVK JH K BENI, GRAL. J. BALLIVIAN', '-17.123465', '-66.205154', '', 'ACTIVO'),
+('d03d4e9a84f28291ab91df15c66a09bc6ca1e64c', 541, 1, 'BENI', 'GRAL. J. BALLIVIAN', 'JUAN PEREZ', 20, 'JH K', 'MGJVK', 45, 123, 1, 2, 'DFGHJKL&Ntilde;', 120, 2, 1, 'SDFGHJKL&Ntilde;', 'SDFGHJKLMN', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-06', 'YHVJBJNB', 'RENTA', 'casas/foto_principal.png', 'MGJVK JH K BENI, GRAL. J. BALLIVIAN', '-17.123465', '-66.205154', 'SI', 'ACTIVO'),
 ('e49dbfbfaa86b43a427503610f86eb84cffc1edd', 535, 4, 'CHUQUISACA', 'HERNANDO SILES', 'PEDRO PEREZ MURILLO', 123, '234', '234', 2435, 4, 3, 5, 'WERWE', 4, 4, 5, 'WER', 'QWEQEW', 'ALVARO BLANCO NINA', 'TERRENO', '2021-10-20', 'WERWER', 'TRASPASO', 'casas/foto_principal.png', '234 234 CHUQUISACA, HERNANDO SILES', '-17.395716', '-66.300677', '', 'ACTIVO');
 
 -- --------------------------------------------------------
@@ -290,6 +290,15 @@ CREATE TABLE `slider` (
   `ruta` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `slider`
+--
+
+INSERT INTO `slider` (`id`, `ruta`) VALUES
+(4, 'slider/7411.jpg'),
+(5, 'slider/772.jpg'),
+(6, 'slider/9953.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -394,7 +403,7 @@ ALTER TABLE `inventario`
 -- AUTO_INCREMENT de la tabla `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
