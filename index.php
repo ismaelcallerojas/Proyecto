@@ -40,62 +40,32 @@ include 'admin/conexion/conexion_web.php';
   </div>
 
   <div class="row">
+      <?php 
+        $sel_marc= $con->prepare("SELECT foto_principal,precio, departamento, provincia, fraccionamiento, propiedad FROM inventario WHERE marcado = 'SI' ");
+        $sel_marc->execute();
+        $res_marc = $sel_marc->get_result();
+
+        while($f_marc = $res_marc->fetch_assoc()){
+      ?>
       <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-image">
-                <img src="admin/inicio/slider/772.jpg">
-                <span class="card-title">precio</span>
+                <img src="admin/propiedades/<?php echo $f_marc['foto_principal'] ?>">
+                <span class="card-title"><?php echo '$'. number_format($f_marc['foto_principal'],2); ?></span>
             </div>
             <div class="card-content">
-                <p>Direccion</p>
+                <p><?php echo $f_marc['fraccionamiento'].' '.$f_marc['departamento'].' '.$f_marc['provincia']; ?></p>
             </div>
             <div class="card-action">
-                <a href="#">Ver mas..</a>
+                <a href="ver_mas.php?id=<?php echo $f_marc['propiedad'] ?>">Ver mas..</a>
             </div>
         </div>
       </div>
-      <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="admin/inicio/slider/772.jpg">
-                <span class="card-title">precio</span>
-            </div>
-            <div class="card-content">
-                <p>Direccion</p>
-            </div>
-            <div class="card-action">
-                <a href="#">Ver mas..</a>
-            </div>
-        </div>
-      </div>
-      <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="admin/inicio/slider/772.jpg">
-                <span class="card-title">precio</span>
-            </div>
-            <div class="card-content">
-                <p>Direccion</p>
-            </div>
-            <div class="card-action">
-                <a href="#">Ver mas..</a>
-            </div>
-        </div>
-      </div>
-      <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="admin/inicio/slider/772.jpg">
-                <span class="card-title">precio</span>
-            </div>
-            <div class="card-content">
-                <p>Direccion</p>
-            </div>
-            <div class="card-action">
-                <a href="#">Ver mas..</a>
-            </div>
-        </div>
-      </div>
+      <?php 
+        }
+        $sel_marc->close();
+        $con->close();
+      ?>
   </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
