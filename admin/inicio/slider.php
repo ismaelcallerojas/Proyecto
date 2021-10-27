@@ -60,7 +60,7 @@
                                 cancelButtonColor: '#d33',
                                 confirmButtonText: 'Si, eliminarlo!'
                                 }).then(function() {
-                                    location.href='eliminar_img.php?id=<?php echo $f_img['id'] ?>&ruta=<?php echo $f_img['ruta'] ?>';})">
+                                    location.href='eliminar_slider.php?id=<?php echo $f_img['id'] ?>&ruta=<?php echo $f_img['ruta'] ?>';})">
                                     <img src="<?php echo $f_img['ruta'] ?>" alt=""></button>
                     <?php 
                     }
