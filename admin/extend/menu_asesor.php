@@ -7,9 +7,9 @@
             <div class="background">
                 <img src="../img/bg1.jpg" width="100%" height="100%">
             </div> 
-            <a href="../perfil/index.php"><img class="circle" src="../usuarios/<?php echo $_SESSION['foto'] ?>"></a>
-            <a href="../perfil/perfil.php" class="white-text"><b><?php echo $_SESSION['nombre'] ?></b></a>
-            <a href="#email" class="white-text"><?php echo $_SESSION['correo'] ?></a>
+            <a href="../perfil/index.php" title="Cambiar foto de perfil"><img class="circle" src="../usuarios/<?php echo $_SESSION['foto'] ?>"></a>
+            <a href="../perfil/perfil.php" title="Cambiar datos de usuario y contraseña" class="white-text"><b><?php echo $_SESSION['nombre'] ?></b></a>
+            <a class="white-text"><?php echo $_SESSION['correo'] ?></a>
         </div>
     </li>
     <li><a href="../inicio"><i class="material-icons" style="color: skyblue">home</i>INICIO</a></li>

@@ -96,7 +96,7 @@ $sel->execute();
               <!--boton de reporte -->
               <td class="borrar"><a href="editar_propiedad.php?id=<?php echo $f['propiedad'] ?>" class="btn-floating waves-effect waves-light blue" title="Actualizar datos de la propiedad"><i class="material-icons">loop</i></a>
               </td>
-              <td class="borrar"><a href="#" class="btn-floating waves-effect waves-light red" onclick="swal({
+              <td class="borrar"><a href="#" title="Cancelar propiedad" class="btn-floating waves-effect waves-light red" onclick="swal({
                   title: 'Esta seguro que desea cancelar la propiedad?',
                   text: 'Al cancelarlo la propiedad pasara a un estado inactivo!',
                   type: 'warning',
