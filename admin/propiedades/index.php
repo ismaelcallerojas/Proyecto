@@ -3,7 +3,7 @@ include '../extend/header.php';
 $row=0;
 if(isset($_GET['ope'])){
   $operacion = $con->real_escape_string(htmlentities($_GET['ope']));
-  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,departamento,provincia,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa, latitud, longitud FROM inventario WHERE estatus = 'ACTIVO' AND operacion = ? ");
+  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,departamento,provincia,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa, latitud, longitud, marcado FROM inventario WHERE estatus = 'ACTIVO' AND operacion = ? ");
       $sel->bind_param('s',$operacion);
 $sel->execute();
           $res = $sel->get_result();
@@ -11,7 +11,7 @@ $sel->execute();
           
         
 }else{
-  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,departamento,provincia,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa, latitud, longitud FROM inventario WHERE estatus = 'ACTIVO' ");
+  $sel = $con->prepare("SELECT propiedad,consecutivo,nombre_cliente,calle_num,fraccionamiento,departamento,provincia,precio,forma_pago,asesor,tipo_inmueble,operacion,mapa, latitud, longitud, marcado FROM inventario WHERE estatus = 'ACTIVO' ");
   $sel->execute();
   $res = $sel->get_result();
   $row = mysqli_num_rows($res);
@@ -51,6 +51,7 @@ $sel->execute();
         <table class="excel" border="1">
           <thead>
               <th class="borrar">Vista</th>
+              <th></th>
               <th>Num</th>
               <th>Cliente</th>
               <th>Propiedad</th>
@@ -74,7 +75,15 @@ $sel->execute();
               </button>
             </td> 
            
+              <td>
 
+                <?php if ($f['marcado']==''):?>
+                  <a href="marcado.php?id=<?php echo $f['propiedad'] ?>&marcado=SI"><i class="small grey-text material-icons">grade</i></a>
+                  <?php else: ?>
+                    <a href="marcado.php?id=<?php echo $f['propiedad'] ?>&marcado="><i class="small green-text material-icons">grade</i></a>
+                <?php endif; ?>
+
+              </td>
               <td><?php echo $f['consecutivo'] ?></td>
               <td><?php echo $f['nombre_cliente'] ?></td>
               <td><?php echo $f['calle_num'].' '.$f['fraccionamiento'].' '.$f['departamento'].' ,'.$f['provincia'] ?></td>
