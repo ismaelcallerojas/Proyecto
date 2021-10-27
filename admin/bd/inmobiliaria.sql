@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2021 a las 03:34:52
--- Versión del servidor: 10.1.19-MariaDB
--- Versión de PHP: 7.0.13
+-- Tiempo de generación: 27-10-2021 a las 12:33:06
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -281,6 +282,17 @@ INSERT INTO `provincias` (`idprovincias`, `iddepartamentos`, `provincia`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `slider`
+--
+
+CREATE TABLE `slider` (
+  `id` int(2) NOT NULL,
+  `ruta` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -344,6 +356,12 @@ ALTER TABLE `provincias`
   ADD UNIQUE KEY `idprovincias_UNIQUE` (`idprovincias`);
 
 --
+-- Indices de la tabla `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -359,21 +377,32 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `cliente`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
   MODIFY `consecutivo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+
+--
+-- AUTO_INCREMENT de la tabla `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
