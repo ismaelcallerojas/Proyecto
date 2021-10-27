@@ -16,86 +16,92 @@ if ($f =$res->fetch_assoc()) {
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="../css/materialize.min.css">
-   <title>modal</title>
+   <title>Detalles</title>
+
  </head>
  <body>
-<h5 align="right"><b><?php echo "$". number_format($f['precio'], 2); ?></b></h5>
+<h5 align="right"><b><?php echo number_format($f['precio'], 2); ?> $</b></h5>
  <table class="striped" width="100%" >
    <tr>
-     <td colspan="4" class="center" ><b>Datos generales</b></td>
+     <td colspan="4" class="center"><b>Datos generales</b></td>
    </tr>
    <tr>
-     <td>Cliente</td>
+     <td><b>Cliente</b></td>
      <td><?php echo $f['nombre_cliente'] ?></td>
-     <td>Num.</td>
+     <td><b>Num.</b></td>
      <td><?php echo $f['consecutivo'] ?></td>
    </tr>
    <tr>
-     <td>Calle y numero</td>
+     <td><b>Calle y numero</b></td>
      <td><?php echo $f['calle_num']?></td>
-     <td>Fraccionamiento</td>
+     <td><b>Barrio</b></td>
      <td><?php echo $f['fraccionamiento'] ?></td>
    </tr>
    <tr>
-     <td>Numero int.</td>
+     <td><b>Numero int.</b></td>
      <td><?php echo $f['numero_int']?></td>
-     <td>Estado</td>
-     <td><?php echo $f['estado'] ?></td>
+     <td><b>Departamento</b></td>
+     <td><?php echo $f['departamento'] ?></td>
    </tr>
    <tr>
-     <td>Municipio</td>
-     <td><?php echo $f['municipio']?></td>
-     <td colspan="2"></td>
+     <td><b>Provincia</b></td>
+     <td colspan="4"><?php echo $f['provincia']?></td>
+     
+   </tr>
+   <tr>
+     <td><b>Latitud</b></td>
+     <td><?php echo $f['latitud'] ?></td>
+     <td><b>Longitud</b></td>
+     <td><?php echo $f['longitud'] ?></td>
    </tr>
    <tr>
      <td colspan="4" class="center" ><b>Caracteristicas</b></td>
    </tr>
    <tr>
-     <td>M2 Terreno.</td>
+     <td><b>M2 Terreno.</b></td>
      <td><?php echo $f['m2t']?></td>
-     <td>M2 Construccion</td>
+     <td><b>M2 Construccion</b></td>
      <td><?php echo $f['m2c'] ?></td>
    </tr>
    <tr>
-     <td>Baños</td>
+     <td><b>Baños</b></td>
      <td><?php echo $f['banos']?></td>
-     <td>Plantas</td>
+     <td><b>Plantas</b></td>
      <td><?php echo $f['plantas'] ?></td>
    </tr>
    <tr>
-     <td>Recamaras</td>
+     <td><b>Recamaras</b></td>
      <td><?php echo $f['recamaras']?></td>
-     <td>Cocheras</td>
+     <td><b>Cocheras</b></td>
      <td><?php echo $f['cocheras'] ?></td>
    </tr>
    <tr>
-     <td>Caracteristicas</td>
+     <td><b>Caracteristicas</b></td>
      <td><?php echo $f['caracteristicas']?></td>
-     <td>Observaciones</td>
+     <td><b>Observaciones</b></td>
      <td><?php echo $f['observaciones'] ?></td>
    </tr>
    <tr>
      <td colspan="4" class="center" ><b>Datos de venta</b></td>
    </tr>
    <tr>
-     <td>Forma de pago</td>
+     <td><b>Forma de pago</b></td>
      <td><?php echo $f['forma_pago']?></td>
-     <td>Asesor</td>
+     <td><b>Asesor</b></td>
      <td><?php echo $f['asesor'] ?></td>
    </tr>
    <tr>
-     <td>Tipo de inmueble</td>
+     <td><b>Tipo de inmueble</b></td>
      <td><?php echo $f['tipo_inmueble']?></td>
-     <td>Fecha de registro</td>
+     <td><b>Fecha de registro</b></td>
      <td><?php echo date('d-m-Y', strtotime($f['fecha_registro']))  ?></td>
    </tr>
    <tr>
-     <td>Comentario web</td>
+     <td><b>Comentario web</b></td>
      <td><?php echo $f['comentario_web']?></td>
-     <td>Operacion</td>
+     <td><b>Operacion</b></td>
      <td><?php echo $f['operacion'] ?></td>
    </tr>
-
  </table>
  </body>
  </html>

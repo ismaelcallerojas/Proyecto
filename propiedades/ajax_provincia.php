@@ -9,7 +9,7 @@
                 $sel_pro->execute();
 
                 $res_pro = $sel_pro->get_result();
-                while($f_pro=$res_pro->fetch_assoc()){?>
+                while($f_pro=$res_pro->fetch_assoc()) { ?>
                 <option value="<?php echo $f_pro['provincia'] ?>"><?php echo $f_pro['provincia'] ?></option>
                 <?php }
                 $sel_pro->close();

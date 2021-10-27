@@ -11,10 +11,13 @@ if($f=$res->fetch_assoc()){
 ?>
 <div class="row">
     <div class="col s6">
-        <h2 class="header">Actualizar foto principal</h2>
+        <h3 class="header">Actualizar foto principal</h3>
+
         <div class="card horizontal">
         <div class="card-image">
             <img src="<?php echo $foto ?>" width="200" height="200">
+            <span class="card-title">Foto Principal</span>
+
         </div>
         <div class="card-stacked">
             <div class="card-content">
@@ -38,7 +41,7 @@ if($f=$res->fetch_assoc()){
     </div>
 
     <div class="col s6">
-        <h2 class="header">Cargar imagenes</h2>
+        <h3 class="header">Cargar imagenes</h3>
         <div class="row">
         <div class="col s12">
         <div class="card">
@@ -89,6 +92,7 @@ if($f=$res->fetch_assoc()){
                     $sel_img->execute();
                     $res_img = $sel_img->get_result();
                     while($f_img = $res_img->fetch_assoc()){?>
+                    
                     <button onclick="swal({
                                 title: 'Esta seguro que desea eliminar la imagen?',
                                 text: 'Al eliminarlo, no podra recuperarlo!',
@@ -112,7 +116,7 @@ if($f=$res->fetch_assoc()){
 <?php include '../extend/scripts.php'; ?>
 <script>
     $('.cargador').hide();
-    $('.form').sumbit(function(event){
+    $('.form').submit(function(event){
         $('.cargador').show();
     });
 </script>

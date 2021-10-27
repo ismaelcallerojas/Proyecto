@@ -1,14 +1,10 @@
-<?php include '../extend/header.php'; 
-$id= $con->real_escape_string(htmlentities($_GET['id']));
-$nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
-?>
-
+<?php include '../extend/header.php'; ?>
 
 <div class="row">
   <div class="col s12">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">Ingreso de propiedad de: <?php echo $nombre?> </span>
+        <span class="card-title">Ingreso de propiedad de: </span>
       </div>
     </div>
   </div>
@@ -22,29 +18,9 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
         <form  action="ins_propiedad.php" method="post" autocomplete="off" >
           <!--AJAX AQUI -->
         <div class="row">
-            <div class="col s6">
-                <select id="departamento" name="departamento" required="">
-                <option value="" disabled selected>SELECCIONA UN DEPARTAMENTO</option>
-                <?php $sel_departamento =$con->prepare("SELECT * FROM departamentos");
-                $sel_departamento->execute();
-
-                $res_departamento = $sel_departamento->get_result();
-                while($f_departamento=$res_departamento->fetch_assoc()) { ?>
-                <option value="<?php echo $f_departamento['iddepartamentos'] ?>"><?php echo $f_departamento['departamento'] ?></option>
-                <?php }
-                $sel_departamento->close();
-                 ?>
-                </select>
-            </div>
-            <div class="col s6">
-                <div class="res_departamento"></div>
-            </div>
-        </div>
-
-        <div class="row">
           <div class="col s6">
-              <input type="hidden" name="id_cliente" value="<?php echo $id ?>">
-              <input type="hidden" name="nombre_cliente" value="<?php echo $nombre ?>">
+              <input type="hidden" name="id_cliente" value="">
+              <input type="hidden" name="nombre_cliente" value="">
 
             <div class="input-field">
               <input type="number" name="precio"  id="precio" step='0.01' required  >
@@ -52,13 +28,8 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
             </div>
             <div class="input-field">
               <input type="text" name="fraccionamiento"  id="fraccionamiento" required onblur="may(this.value, this.id)" >
-              <label for="fraccionamiento">Barrio</label>
+              <label for="fraccionamiento">Fraccionamiento</label>
             </div>
-            <div class="input-field">
-              <input type="text" name="latitud"  id="latitud"  >
-              <label for="num_int">Latitud</label>
-            </div>
-
 
           </div> <!--Termina Primer columna -->
           <div class="col s6">
@@ -70,10 +41,6 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
             <div class="input-field">
               <input type="number" name="numero_int"  id="numero_int"  >
               <label for="num_int">Numero interior</label>
-            </div>
-            <div class="input-field">
-              <input type="text" name="longitud"  id="longitud"  >
-              <label for="num_int">Longitud</label>
             </div>
 
           </div><!-- TerminaSegunda columna -->
@@ -135,23 +102,10 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
               <label for="forma_pago">Forma de pago</label>
             </div>
 
-             <?php if ($_SESSION['nivel'] == 'ADMINISTRADOR'): ?>
-                <select class="" name="asesor" required="">
-                  <option value="" disabled selected >ESCOGE UN ASESOR</option>
-                  <?php $sel= $con->prepare("SELECT nombre FROM usuario WHERE bloqueo = 1");
-                  $sel->execute();
-                  $res= $sel->get_result();
-                  while($f = $res->fetch_assoc()){  ?>
-                  <option value="<?php echo $f['nombre'] ?>"><?php echo $f['nombre'] ?></option>
-                  <?php }
-                  $sel->close();
-                  $con->close();
-                  ?>
-                </select>
-                <?php else: ?>
-                    <input type="text" readonly name="asesor" value="<?php echo $_SESSION['nombre'] ?>">
-                <?php endif; ?>
 
+              <select class="" name="asesor">
+                <!-- Se llena con PHP-->
+              </select>
 
             <select name="tipo_inmueble" required >
               <option value="" disabled selected  >ELIGE EL TIPO DE INMUEBLE</option>
@@ -167,7 +121,7 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
 
             <div class="input-field">
               <!-- Se inicializa-->
-              <input type="text" class="datepicker" name="fecha_registro" id="fecha_registro" required >
+              <input type="date" class="datepicker" name="fecha_registro" id="fecha_registro" required >
               <label for="fecha_registro">Fecha de registro</label>
             </div>
 
@@ -187,7 +141,7 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
           </div><!-- Termina Segunda columna -->
         </div>
         <center>
-        <button type="submit" class="waves-effect waves-light btn" id="btn_guardar">Guardar <i class="material-icons right">send</i></button>
+        <button type="submit" class="btn">Guardar</button>
         </center>
         </form>
       </div>
@@ -196,9 +150,5 @@ $nombre= $con->real_escape_string(htmlentities($_GET['nombre']));
 </div>
 
 <?php include '../extend/scripts.php'; ?>
-<script src="../js/departamentos.js">
-
-</script>
-
 </body>
 </html>
