@@ -1,0 +1,1 @@
+//hacer que la lista de propiedades se exporte en una archivo excel
