@@ -94,7 +94,7 @@ include 'admin/conexion/conexion_web.php';
     <footer class="page-footer orange">
           <div class="footer-copyright">
             <div class="container center">
-            © 2014 Derechos Reservados - Universidad Adventista de Bolivia
+            © 2021 Derechos Reservados - Universidad Adventista de Bolivia
             </div>
           </div>
     </footer>
