@@ -2,19 +2,20 @@
 include 'admin/conexion/conexion_web.php'; 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.png">
     <link rel="stylesheet" href="admin/css/styles.css">
     <link rel="stylesheet" href="admin/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Sitio web</title>
 </head>
 <body class="blue-grey lighten-5">
-    <div class="orange accent-4 center">
+    <div class="orange center">
         <a href="#" class="brand-logo center"><img src="img/logo.png" width="50" class="circle"></a>
     </div>
     <div class="slider">
@@ -178,10 +179,15 @@ include 'admin/conexion/conexion_web.php';
      </div>
    </div>
 
-   <footer class="page-footer red white-text center">
-                
-                <p>Copyrigth 2021 Sitio Web: Inmobiliaria<br>Universidad Adventista de Bolivia<br><br><br></p>
-   </footer>
+   <footer class="page-footer orange">
+          <div class="footer-copyright">
+            <div class="container center">
+            © 2014 Derechos Reservados - Universidad Adventista de Bolivia
+            </div>
+          </div>
+        </footer>
+
+   
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
