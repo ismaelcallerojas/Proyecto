@@ -33,15 +33,16 @@ include 'admin/conexion/conexion_web.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.png">
     <link rel="stylesheet" href="admin/css/styles.css">
     <link rel="stylesheet" href="admin/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Sitio web</title>
 </head>
 <body class="blue-grey lighten-5">
-    <nav class="red">
-        <a href="index.php" class="brand-logo center">Logo</a>
-    </nav>
+    <div class="orange center">
+        <a href="index.php" class="brand-logo center"><img src="img/logo.png" width="50" class="circle"></a>
+    </div>
 
     <div class="slider">
     <ul class="slides">
@@ -54,8 +55,8 @@ include 'admin/conexion/conexion_web.php';
       <li>
         <img src="admin/inicio/<?php echo $f['ruta']?>"> <!-- random image -->
         <div class="caption center-align">
-          <h3>Empresa</h3>
-          <h5 class="light grey-text text-lighten-3">slogan de la empresa</h5>
+          <h3>Sitio Web Inmobiliaria</h3>
+          <h5 class="light white-text text-lighten-3">“ Tu asesor inmobiliario de confianza”, “Trabajamos por y para tu tranquilidad”</h5>
         </div>
       </li>
       <?php
@@ -88,7 +89,15 @@ include 'admin/conexion/conexion_web.php';
         $sel_marc->close();
       ?>
   </div>
-    
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <footer class="page-footer orange">
+          <div class="footer-copyright">
+            <div class="container center">
+            © 2014 Derechos Reservados - Universidad Adventista de Bolivia
+            </div>
+          </div>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

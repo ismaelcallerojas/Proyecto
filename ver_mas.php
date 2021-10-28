@@ -14,14 +14,15 @@ if ($f =$res->fetch_assoc()) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/favicon.png">
   <link rel="stylesheet" href="admin/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Sitio web</title>
 </head>
 <body class="blue-grey lighten-5">
-<nav class="red" >
-  <a href="index.php" class="brand-logo center">Logo</a>
-</nav>
+      <div class="orange center">
+        <a href="index.php" class="brand-logo center"><img src="img/logo.png" width="50" class="circle"></a>
+      </div>
 
 <div class="container">
   <div class="row">
@@ -149,6 +150,13 @@ if ($f =$res->fetch_assoc()) {
    </div>
 
 </div>
+    <footer class="page-footer orange">
+          <div class="footer-copyright">
+            <div class="container center">
+            © 2014 Derechos Reservados - Universidad Adventista de Bolivia
+            </div>
+          </div>
+    </footer>
 
 
   <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>

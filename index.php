@@ -16,7 +16,7 @@ include 'admin/conexion/conexion_web.php';
 </head>
 <body class="blue-grey lighten-5">
     <div class="orange center">
-        <a href="#" class="brand-logo center"><img src="img/logo.png" width="50" class="circle"></a>
+        <a href="index.php ?>" class="brand-logo center"><img src="img/logo.png" width="50" class="circle"></a>
     </div>
     <div class="slider">
     <ul class="slides">
@@ -179,13 +179,13 @@ include 'admin/conexion/conexion_web.php';
      </div>
    </div>
 
-   <footer class="page-footer orange">
+    <footer class="page-footer orange">
           <div class="footer-copyright">
             <div class="container center">
             © 2014 Derechos Reservados - Universidad Adventista de Bolivia
             </div>
           </div>
-        </footer>
+    </footer>
 
    
 
