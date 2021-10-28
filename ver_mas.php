@@ -137,7 +137,10 @@ if ($f =$res->fetch_assoc()) {
                    <label for="">Mensaje:</label>
                    <input type="hidden" name="id_propiedad" id="id_propiedad" value="<?php echo $id ?>">
                  </div>
-                 <button type="button" class="btn">Enviar</button>
+                 <button type="button" class="btn" id="enviar">Enviar</button>
+                 <div class="resultado">
+
+                 </div>
              </div>
            </div>
          </div>
@@ -152,6 +155,22 @@ if ($f =$res->fetch_assoc()) {
   <script src="admin/js/materialize.min.js"></script>
   <script>
        $('.materialboxed').materialbox();
+
+       $('#enviar').click(function(){
+            $.post('ins_comentario.php',{
+                nombre:$('#nombre').val(),
+                telefono:$('#telefono').val(),
+                correo:$('#correo').val(),
+                mensaje:$('#mensaje').val(),
+                id_propiedad:$('#id_propiedad').val(),
+                
+                beforeSend: function(){
+                    $('.resultado').html("Espere un momento por favor..");
+                }
+            }, function(respuesta){
+                $('.resultado').html(respuesta);
+            });
+        });
   </script>
 </body>
 </html>
