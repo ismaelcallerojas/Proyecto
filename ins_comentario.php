@@ -8,8 +8,8 @@ $mensaje = htmlentities($_POST['mensaje']);
 $id_propiedad = htmlentities($_POST['id_propiedad']);
 $id = '';
 
-$ins = $con->prepare("INSERT INTO comentario VALUES(?,?,?,?,?,?) ");
-$ins->bind_param("isssss",$id, $id_propiedad, $nombre, $telefono, $correo, $mensaje);
+$ins = $con->prepare("INSERT INTO comentario VALUES(?,?,?,?,?,?,?) ");
+$ins->bind_param("issssss",$id, $id_propiedad, $nombre, $telefono, $correo, $mensaje,$estatus='NUEVO');
 
 
 if ($ins->execute()) {

@@ -141,7 +141,49 @@ include 'admin/conexion/conexion_web.php';
 </div>
 
     <!--formulario de contacto-->
-    
+    <div class="row">
+     <div class="col s12">
+       <div class="card">
+         <div class="card-content">
+             
+            <span class="card-title">Contacto</span>
+            <div class="row">
+                <div class="col s6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121838.20215604223!2d-66.2386089254841!3d-17.39047605037208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373e0d9e4ab27%3A0xa2719ae9532c3e65!2sCochabamba!5e0!3m2!1ses!2sbo!4v1635433363474!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" class="z-depth-4" loading="lazy"></iframe>
+                </div>
+                <div class="col s6">
+                <div class="input-field">
+                   <input type="text" name="nombre" pattern="[A-Za-z/s ]+"  title=""  id="nombre" required >
+                   <label for="nombre">Nombre:</label>
+                 </div>
+                 <div class="input-field">
+                   <input type="text" name="asunto"   title=""  id="asunto"  >
+                   <label for="asunto">Asunto:</label>
+                 </div>
+                 <div class="input-field">
+                   <input type="email" name="correo"   title=""  id="correo" required  >
+                   <label for="correo">Correo:</label>
+                 </div>
+                 <div class="input-field">
+                   <textarea name="mensaje" rows="8" cols="80" id="mensaje" onblur="may(this.value, this.id)" class="materialize-textarea"></textarea>
+                   <label for="">Mensaje:</label>
+                 </div>
+                 <button type="button" class="btn" id="enviar">Enviar</button>
+                 <div class="resultado">
+
+                 </div>
+                </div>
+            </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <footer class="page-footer red white-text center">
+                
+                <p>Copyrigth 2021 Empresa</p>
+   </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="admin/js/v0.100.2/materialize.min.js"></script>
@@ -161,6 +203,22 @@ include 'admin/conexion/conexion_web.php';
                 }
             }, function(respuesta){
                 $('.res_departamento').html(respuesta);
+            });
+        });
+        
+        $('#enviar').click(function(){
+            $.post('email.php',{
+                nombre:$('#nombre').val(),
+                asunto:$('#asunto').val(),
+                correo:$('#correo').val(),
+                mensaje:$('#mensaje').val(),
+                id_propiedad:$('#id_propiedad').val(),
+                
+                beforeSend: function(){
+                    $('.resultado').html("Espere un momento por favor..");
+                }
+            }, function(respuesta){
+                $('.resultado').html(respuesta);
             });
         });
 
