@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2021 a las 17:36:17
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.25
+-- Tiempo de generación: 28-10-2021 a las 22:37:42
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 7.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -45,6 +44,30 @@ INSERT INTO `cliente` (`id`, `nombre`, `direccion`, `tel`, `correo`, `asesor`) V
 (4, 'PEDRO PEREZ MURILLO', 'CPLCAPIRHUA KM 7 1/2', '345543534', 'blanco2723@gmail.com', 'ALVARO BLANCO NINA'),
 (5, 'ROSA', 'COCHABAMBA', '73188024', 'rosita@gmail.com', 'ISMAEL CALLLE ROJAS'),
 (6, 'EJEMPLO DE ASESOR', 'DIRECCION', '465987987', 'scslcwl@gmail.com', 'ASESOR');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id` int(10) NOT NULL,
+  `id_propiedad` varchar(200) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `tel` varchar(30) NOT NULL,
+  `correo` varchar(200) NOT NULL,
+  `mensaje` text NOT NULL,
+  `estatus` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id`, `id_propiedad`, `nombre`, `tel`, `correo`, `mensaje`, `estatus`) VALUES
+(1, 'e49dbfbfaa86b43a427503610f86eb84cffc1edd', 'sitio web', '74763897', 'codeblockisma.18@gmail.com', 'Hola me interesa esta propiedad', 'RESUELTO'),
+(2, 'e49dbfbfaa86b43a427503610f86eb84cffc1edd', 'Juanito Perez', '12345678', 'juanito@gmail.com', 'Hola me interesa esta propiedad', 'NUEVO');
 
 -- --------------------------------------------------------
 
@@ -146,10 +169,10 @@ INSERT INTO `inventario` (`propiedad`, `consecutivo`, `id_cliente`, `departament
 ('0a9bda549062b9a62e40322e470fffee2cecf933', 538, 1, 'COCHABAMBA', 'BOLIVAR', 'JUAN PEREZ', 20, 'JJJ', 'BBBB', 12, 1, 1, 1, 'JBLV', 67, 2, 1, 'DFCGHBJK', 'JKB', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-12', 'FXJFX', 'TRASPASO', 'casas/principal-8570a9bda549062b9a62e40322e470fffee2cecf933.jpg', 'BBBB JJJ COCHABAMBA, BOLIVAR', '-17.660921', '-62.718803', '', 'ACTIVO'),
 ('582fa063a2b16d8487f1749e6c5330c63b379d27', 536, 4, 'COCHABAMBA', 'CHAPARE', 'PEDRO PEREZ MURILLO', 100000, 'ENTRE RIOS', '234', 324, 342, 1, 4, 'QUIMICO', 23, 2, 3, 'MUCHA CALOR', 'WERQ', 'ASESOR', 'LOCAL', '2021-10-20', 'NO RECOMENDABLE PARA CLIENTES DEL OCCIDENTE', 'VENTA', 'casas/principal-417582fa063a2b16d8487f1749e6c5330c63b379d27.jpg', '234 ENTRE RIOS COCHABAMBA, CHAPARE', '-17.395716', '-66.300677', '', 'ACTIVO'),
 ('589daf38b7139cbb90fb98f1e1c7664defc43910', 540, 5, 'COCHABAMBA', 'CERCADO', 'ROSA', 80000, 'PJE. BOLIVAR', 'PJE. BOLIVAR', 192, 500, 2, 1, 'PLAZA', 600, 10, 2, 'AREA VERDE', 'EFECTIVO', 'ISMAEL FERNANDO CALLE ROJAS', 'LOCAL', '2021-10-01', 'RECOMENDABLE', 'RENTA', 'casas/principal-161589daf38b7139cbb90fb98f1e1c7664defc43910.jpg', 'PJE. BOLIVAR PJE. BOLIVAR COCHABAMBA, CERCADO', '-17.395716', '-66.300677', '', 'ACTIVO'),
-('726f361d3c41359f057aa2ff58741314d6479b59', 542, 1, 'CHUQUISACA', 'AZURDUY', 'JUAN PEREZ', 250000, 'VINTO', 'LJNVDSVNE&Ntilde;OV', 192, 1234, 2, 2, 'SDFGHJKJHGFDFGVBNHM', 123, 3, 2, 'GFGVHJGFCVBN', 'EFECTIVO', 'ASESOR', 'CASA', '2021-10-20', 'RTHTHTRHRTHTRHTRERHTR', 'VENTA', 'casas/foto_principal.png', 'LJNVDSVNE&Ntilde;OV VINTO CHUQUISACA, AZURDUY', '-17.654123', '-16.123465', 'SI', 'ACTIVO'),
-('8f1bea52f3ed56e2e5d0518362d6dc05f2c6bd37', 537, 1, 'LA PAZ', 'ABEL ITURRALDE', 'JUAN PEREZ', 20, 'JJJ', 'BBBB', 12, 1, 1, 1, 'JBLV', 67, 2, 1, 'DFCGHBJK', 'JKB', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-14', 'FXJFX', 'TRASPASO', 'casas/foto_principal.png', 'BBBB JJJ LA PAZ, ABEL ITURRALDE', '-17.395716', '-66.300677', 'SI', 'ACTIVO'),
-('d03d4e9a84f28291ab91df15c66a09bc6ca1e64c', 541, 1, 'BENI', 'GRAL. J. BALLIVIAN', 'JUAN PEREZ', 20, 'JH K', 'MGJVK', 45, 123, 1, 2, 'DFGHJKL&Ntilde;', 120, 2, 1, 'SDFGHJKL&Ntilde;', 'SDFGHJKLMN', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-06', 'YHVJBJNB', 'RENTA', 'casas/foto_principal.png', 'MGJVK JH K BENI, GRAL. J. BALLIVIAN', '-17.123465', '-66.205154', 'SI', 'ACTIVO'),
-('e49dbfbfaa86b43a427503610f86eb84cffc1edd', 535, 4, 'CHUQUISACA', 'HERNANDO SILES', 'PEDRO PEREZ MURILLO', 123, '234', '234', 2435, 4, 3, 5, 'WERWE', 4, 4, 5, 'WER', 'QWEQEW', 'ALVARO BLANCO NINA', 'TERRENO', '2021-10-20', 'WERWER', 'TRASPASO', 'casas/foto_principal.png', '234 234 CHUQUISACA, HERNANDO SILES', '-17.395716', '-66.300677', 'SI', 'ACTIVO');
+('726f361d3c41359f057aa2ff58741314d6479b59', 542, 1, 'CHUQUISACA', 'AZURDUY', 'JUAN PEREZ', 250000, 'VINTO', 'LJNVDSVNE&Ntilde;OV', 192, 1234, 2, 2, 'SDFGHJKJHGFDFGVBNHM', 123, 3, 2, 'GFGVHJGFCVBN', 'EFECTIVO', 'ASESOR', 'CASA', '2021-10-20', 'RTHTHTRHRTHTRHTRERHTR', 'VENTA', 'casas/principal-404726f361d3c41359f057aa2ff58741314d6479b59.jpg', 'LJNVDSVNE&Ntilde;OV VINTO CHUQUISACA, AZURDUY', '-17.654123', '-16.123465', 'SI', 'ACTIVO'),
+('8f1bea52f3ed56e2e5d0518362d6dc05f2c6bd37', 537, 1, 'LA PAZ', 'ABEL ITURRALDE', 'JUAN PEREZ', 20, 'JJJ', 'BBBB', 12, 1, 1, 1, 'JBLV', 67, 2, 1, 'DFCGHBJK', 'JKB', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-14', 'FXJFX', 'TRASPASO', 'casas/principal-2768f1bea52f3ed56e2e5d0518362d6dc05f2c6bd37.jpg', 'BBBB JJJ LA PAZ, ABEL ITURRALDE', '-17.395716', '-66.300677', 'SI', 'ACTIVO'),
+('d03d4e9a84f28291ab91df15c66a09bc6ca1e64c', 541, 1, 'BENI', 'GRAL. J. BALLIVIAN', 'JUAN PEREZ', 20, 'JH K', 'MGJVK', 45, 123, 1, 2, 'DFGHJKL&Ntilde;', 120, 2, 1, 'SDFGHJKL&Ntilde;', 'SDFGHJKLMN', 'ISMAEL FERNANDO CALLE ROJAS', 'TERRENO', '2021-10-06', 'YHVJBJNB', 'RENTA', 'casas/principal-283d03d4e9a84f28291ab91df15c66a09bc6ca1e64c.jpg', 'MGJVK JH K BENI, GRAL. J. BALLIVIAN', '-17.123465', '-66.205154', 'SI', 'ACTIVO'),
+('e49dbfbfaa86b43a427503610f86eb84cffc1edd', 535, 4, 'CHUQUISACA', 'HERNANDO SILES', 'PEDRO PEREZ MURILLO', 123, '234', '234', 2435, 4, 3, 5, 'WERWE', 4, 4, 5, 'WER', 'QWEQEW', 'ALVARO BLANCO NINA', 'TERRENO', '2021-10-20', 'WERWER', 'TRASPASO', 'casas/principal-578e49dbfbfaa86b43a427503610f86eb84cffc1edd.jpg', '234 234 CHUQUISACA, HERNANDO SILES', '-17.395716', '-66.300677', 'SI', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -340,6 +363,12 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
@@ -388,32 +417,31 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `cliente`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+--
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
 --
 -- AUTO_INCREMENT de la tabla `inventario`
 --
 ALTER TABLE `inventario`
   MODIFY `consecutivo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
-
 --
 -- AUTO_INCREMENT de la tabla `slider`
 --
 ALTER TABLE `slider`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
