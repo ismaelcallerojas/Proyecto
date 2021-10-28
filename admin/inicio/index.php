@@ -125,7 +125,7 @@ $sel->bind_param('s', $operacion);
             </td> 
              <td><?php echo $fn['nombre'] ?></td>
              <td><?php echo $fn['tel'] ?></td>
-             <td><?php echo $fn['correo'] ?></td>
+             <td> <a href="correo.php?correo=<?php echo $fn['correo'] ?>$nombre=<?php echo $fn['nombre'] ?>$id_mensaje=<?php echo $fn['id'] ?>"><?php echo $fn['correo'] ?></a> </td>
              <td><?php echo $fn['mensaje'] ?></td>
            </tr>
            <?php } ?>
