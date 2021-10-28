@@ -7,8 +7,8 @@ include 'admin/conexion/conexion_web.php';
         $tipo_inmueble = htmlentities($_POST['tipo_inmueble']);
         $rango1 = htmlentities($_POST['rango1']);
         $rango2 = htmlentities($_POST['rango2']);
-
-        $sel_edo= $con->prepare("SELECT departamento FROM departamentos WHERE iddepartamento = ? ");
+        
+        $sel_edo= $con->prepare("SELECT departamento FROM departamentos WHERE iddepartamentos = ? ");
         $sel_edo->bind_param('i', $id_departamento);
         $sel_edo->execute();
         $res_edo = $sel_edo->get_result();
@@ -16,7 +16,7 @@ include 'admin/conexion/conexion_web.php';
             $departamento = $f_edo['departamento'];
         }
 
-        $sel_marc= $con->prepare("SELECT foto_principal,precio, departamento, provincia, fraccionamiento, propiedad FROM inventario WHERE departamentos = ? AND provincia = ? AND operacion = ? AND tipo_inmueble = ? AND precio BETWEEN ? AND ? ");
+        $sel_marc= $con->prepare("SELECT foto_principal, precio, departamento, provincia, fraccionamiento, propiedad FROM inventario WHERE departamento = ? AND provincia = ? AND operacion = ? AND tipo_inmueble = ? AND precio BETWEEN ? AND ? ");
         $sel_marc->bind_param('ssssdd', $departamento, $provincia, $operacion, $tipo_inmueble,$rango1, $rango2);
         $sel_marc->execute();
         $res_marc = $sel_marc->get_result();

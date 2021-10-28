@@ -51,7 +51,7 @@ include 'admin/conexion/conexion_web.php';
       <div class="col s12 m6 l3">
         <div class="card">
             <div class="card-image">
-                <img src="admin/propiedades/<?php echo $f_marc['foto_principal'] ?>">
+                <img hight="500" width="500" src="admin/propiedades/<?php echo $f_marc['foto_principal'] ?>">
                 <span class="card-title"><?php echo '$'. number_format($f_marc['precio'],2); ?></span>
             </div>
             <div class="card-content">
@@ -76,7 +76,7 @@ include 'admin/conexion/conexion_web.php';
                 <form action="buscar.php" method="post">
                     <div class="row">
                         <div class="col s6">
-                            <select id="departamento" name="departamento" required="">
+                            <select id="departamento" name="departamento" required>
                             <option value="" disabled selected>SELECCIONA UN DEPARTAMENTO</option>
                             <?php $sel_departamento =$con->prepare("SELECT * FROM departamentos");
                             $sel_departamento->execute();
@@ -146,7 +146,8 @@ include 'admin/conexion/conexion_web.php';
     <script src="admin/js/materialize.min.js"></script>
     <script>
         $('.slider').slider();
-        $('select').material_select();
+        $('select').formSelect();
+
 
 
         $('#departamento').change(function(){
