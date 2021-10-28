@@ -14,10 +14,9 @@ include 'admin/conexion/conexion_web.php';
     <title>Sitio web</title>
 </head>
 <body class="blue-grey lighten-5">
-    <nav class="red">
-        <a href="#" class="brand-logo center">Logo</a>
-    </nav>
-
+    <div class="orange accent-4 center">
+        <a href="#" class="brand-logo center"><img src="img/logo.png" width="50" class="circle"></a>
+    </div>
     <div class="slider">
     <ul class="slides">
     <?php
@@ -29,8 +28,8 @@ include 'admin/conexion/conexion_web.php';
       <li>
         <img src="admin/inicio/<?php echo $f['ruta']?>"> <!-- random image -->
         <div class="caption center-align">
-          <h3>Empresa</h3>
-          <h5 class="light grey-text text-lighten-3">slogan de la empresa</h5>
+          <h3>Sitio Web Inmobiliaria</h3>
+          <h5 class="light white-text text-lighten-3">“ Tu asesor inmobiliario de confianza”, “Trabajamos por y para tu tranquilidad”</h5>
         </div>
       </li>
       <?php
@@ -181,7 +180,7 @@ include 'admin/conexion/conexion_web.php';
 
    <footer class="page-footer red white-text center">
                 
-                <p>Copyrigth 2021 Empresa</p>
+                <p>Copyrigth 2021 Sitio Web: Inmobiliaria<br>Universidad Adventista de Bolivia<br><br><br></p>
    </footer>
 
 

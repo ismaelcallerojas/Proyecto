@@ -1,4 +1,4 @@
-<?php
+    <?php
 include 'admin/conexion/conexion_web.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     foreach($_POST as $campo => $valor){    
@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $header .= "Content-Type: text/html; charset=iso-8859-1 \r\n";
     $header .= "From: {$nombre} <{$correo}> \r\n";
 
-    $mail = mail("blanco2723@gmail.com", $asunto, $mensaje, $header);
+    $mail = mail("ismaelcallerojas@gmail.com", $asunto, $mensaje, $header);
     if($mail){
         echo "<h3 style='color:green;'>Su mensaje ha sido enviado</h3>";
     }else{

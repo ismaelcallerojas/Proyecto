@@ -4,8 +4,8 @@ $sel->bind_param('s', $operacion);
 ?>
 
 <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
+    <div class="col s12 m6 l6">
+      <div class="card orange darken-1">
         <div class="card-image">
         <img src="../img/bg20.jpg" height="200px">
           <span class="card-title white-text"><b>VENTAS</b></span>
@@ -16,17 +16,14 @@ $sel->bind_param('s', $operacion);
             $sel->execute();
             $res_venta = $sel->get_result();
             echo mysqli_num_rows($res_venta);
-          ?><a href="../propiedades/index.php?ope=VENTA" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          ?><a href="../propiedades/index.php?ope=VENTA" class="btn-floating halfway-fab waves-effect waves-light black" title="Ver más..."><i class="material-icons">add</i></a>
           </h4>
-          
-        </div>
-        <div class="card-content">
         </div>
       </div>
     </div>
 
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
+    <div class="col s12 m6 l6">
+      <div class="card green darken-1">
         <div class="card-image">
         <img src="../img/bg20.jpg" height="200px">
           <span class="card-title white-text"><b>RENTADOS</b></span>
@@ -37,18 +34,15 @@ $sel->bind_param('s', $operacion);
             $sel->execute();
             $res_renta = $sel->get_result();
             echo mysqli_num_rows($res_renta);
-          ?><a href="../propiedades/index.php?ope=RENTA" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          ?><a href="../propiedades/index.php?ope=RENTA" class="btn-floating halfway-fab waves-effect waves-light black" title="Ver más..."><i class="material-icons">add</i></a>
           </h4>
-          
-        </div>
-        <div class="card-content">
         </div>
       </div>
     </div>
 
 <div class="row">
-<div class="col s12 m6">
-      <div class="card blue-grey darken-1">
+<div class="col s12 m6 l6">
+      <div class="card blue darken-1">
         <div class="card-image">
         <img src="../img/bg20.jpg" height="200px">
           <span class="card-title white-text"><b>TRASPASOS</b></span>
@@ -59,20 +53,17 @@ $sel->bind_param('s', $operacion);
             $sel->execute();
             $res_traspaso = $sel->get_result();
             echo mysqli_num_rows($res_traspaso);
-          ?><a href="../propiedades/index.php?ope=TRASPASO" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          ?><a href="../propiedades/index.php?ope=TRASPASO" class="btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons" title="Ver más...">add</i></a>
           </h4>
-          
-        </div>
-        <div class="card-content">
         </div>
       </div>
     </div>
 
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
+    <div class="col s12 m6 l6">
+      <div class="card red darken-1">
         <div class="card-image">
         <img src="../img/bg20.jpg" height="200px">
-          <span class="card-title white-text"><b>OCUPADO</b></span>
+          <span class="card-title white-text"><b>OCUPADOS</b></span>
           <h4 align="center" class="white-text">
           
           <?php 
@@ -80,11 +71,8 @@ $sel->bind_param('s', $operacion);
             $sel->execute();
             $res_ocupado = $sel->get_result();
             echo mysqli_num_rows($res_ocupado);
-          ?><a href="../propiedades/index.php?ope=OCUPADO" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+          ?><a href="../propiedades/index.php?ope=OCUPADO" class="btn-floating halfway-fab waves-effect waves-light black"><i class="material-icons" title="Ver más...">add</i></a>
           </h4>
-          
-        </div>
-        <div class="card-content">
         </div>
       </div>
     </div>
@@ -98,7 +86,7 @@ $sel->bind_param('s', $operacion);
       <h4 align="center">COMENTARIOS</h4>
     </div>
     <div class="card-tabs">
-      <ul class="tabs tabs-fixed-width tabs-transparent">
+      <ul class="tabs tabs-fixed-width">
         <li class="tab"><a class="active" href="#nuevos">Nuevos</a></li>
         <li class="tab"><a href="#resueltos">Resueltos</a></li>
       </ul>
@@ -106,7 +94,7 @@ $sel->bind_param('s', $operacion);
     <div class="card-content white">
       <div id="nuevos">
         <table>
-           <th>Vista</th>
+           <th>Propiedad</th>
            <th>Solicitante</th>
            <th>Telefono</th>
            <th>Correo</th>
@@ -133,7 +121,7 @@ $sel->bind_param('s', $operacion);
       </div>
       <div id="resueltos">
       <table>
-           <th>Vista</th>
+           <th>Propiedad</th>
            <th>Solicitante</th>
            <th>Telefono</th>
            <th>Correo</th>

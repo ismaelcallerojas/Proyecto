@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $up = $con->prepare("UPDATE comentario SET estatus='RESUELTO' WHERE id = ? ");
         $up->bind_param('i', $id_mensaje);
         $up->execute();
-        $up = close();
+        $up-> close();
         header('location:../extend/alerta.php?msj=Mensaje enviado&c=home&p=home&t=success');   
     }else{
         header('location:../extend/alerta.php?msj=Mensaje no enviado&c=home&p=home&t=error');
