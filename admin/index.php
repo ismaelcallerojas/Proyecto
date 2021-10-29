@@ -3,7 +3,7 @@
 if (isset($_SESSION['nick'])) {
     header('location:inicio');
 }
-
+//sistema web//
 ?>
 <!DOCTYPE html>
 <html lang="es">
